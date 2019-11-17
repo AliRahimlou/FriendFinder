@@ -139,15 +139,18 @@
         </div>
 
         <!-- Materialize Modal Structure -->
-        <div id="modal1" class="modal">
+        <div id="modal1" class="modal modal-fixed-footer">
           <div class="modal-content">
             <h4>Meet Your New Friend!</h4>
             <h5 id="matchName"></h5>
             <img id="matchPic" src= ${photo} alt="No Image" width = 250px>
           </div>
-        <div class="modal-footer">
+        <!-- <div class="modal-footer">
           <a href="#!" class=" modal-action modal-close waves-effect waves-green btn-flat">Done</a>
-        </div>
+        </div> -->
+        <div class="modal-footer">
+                <a href="#!" class="modal-close waves-effect waves-green btn-flat">Done</a>
+              </div>
       </div>
 
     </div>
@@ -198,8 +201,10 @@ $(document).ready(function() {
                 $("#matchName").text(data.name);
                 $("#matchPic").attr("src", data.photo);
             });
+            
             // Show the modal with the best match
                 $('.modal').modal();
+                
             //clear form after submission
             $('#name').val("");
             $('#photo').val("");
@@ -213,6 +218,7 @@ $(document).ready(function() {
             $('#q8').val("");
             $('#q9').val("");
             $('#q10').val("");
+            
         } else {
             alert("Please fill out ALL fields before submitting survey!")
         }
